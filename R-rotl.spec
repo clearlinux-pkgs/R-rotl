@@ -4,18 +4,17 @@
 #
 Name     : R-rotl
 Version  : 3.0.7
-Release  : 9
+Release  : 10
 URL      : https://cran.r-project.org/src/contrib/rotl_3.0.7.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rotl_3.0.7.tar.gz
 Summary  : Interface to the 'Open Tree of Life' API
 Group    : Development/Tools
 License  : BSD-2-Clause
-Requires: R-ape
-Requires: R-httr
-Requires: R-rentrez
-Requires: R-rncl
+Requires: R-progress
 BuildRequires : R-ape
+BuildRequires : R-assertthat
 BuildRequires : R-httr
+BuildRequires : R-progress
 BuildRequires : R-rentrez
 BuildRequires : R-rncl
 BuildRequires : buildreq-R
@@ -41,10 +40,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1550337688
+export SOURCE_DATE_EPOCH=1552862160
 
 %install
-export SOURCE_DATE_EPOCH=1550337688
+export SOURCE_DATE_EPOCH=1552862160
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -80,8 +79,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library rotl|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  rotl || :
 
 
 %files
@@ -122,3 +120,19 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/rotl/help/rotl.rdx
 /usr/lib64/R/library/rotl/html/00Index.html
 /usr/lib64/R/library/rotl/html/R.css
+/usr/lib64/R/library/rotl/tests/test-all.R
+/usr/lib64/R/library/rotl/tests/testthat/test-API.R
+/usr/lib64/R/library/rotl/tests/testthat/test-api-studies.R
+/usr/lib64/R/library/rotl/tests/testthat/test-api-taxonomy.R
+/usr/lib64/R/library/rotl/tests/testthat/test-api-tnrs.R
+/usr/lib64/R/library/rotl/tests/testthat/test-api-tol.R
+/usr/lib64/R/library/rotl/tests/testthat/test-base.R
+/usr/lib64/R/library/rotl/tests/testthat/test-deduplicate_labels.R
+/usr/lib64/R/library/rotl/tests/testthat/test-external.R
+/usr/lib64/R/library/rotl/tests/testthat/test-match_names.R
+/usr/lib64/R/library/rotl/tests/testthat/test-studies.R
+/usr/lib64/R/library/rotl/tests/testthat/test-taxonomy.R
+/usr/lib64/R/library/rotl/tests/testthat/test-tnrs.R
+/usr/lib64/R/library/rotl/tests/testthat/test-tol.R
+/usr/lib64/R/library/rotl/tests/testthat/test-tree_to_labels.R
+/usr/lib64/R/library/rotl/tests/tree_of_life.json
