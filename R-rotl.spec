@@ -4,13 +4,12 @@
 #
 Name     : R-rotl
 Version  : 3.0.7
-Release  : 10
+Release  : 11
 URL      : https://cran.r-project.org/src/contrib/rotl_3.0.7.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rotl_3.0.7.tar.gz
 Summary  : Interface to the 'Open Tree of Life' API
 Group    : Development/Tools
 License  : BSD-2-Clause
-Requires: R-progress
 BuildRequires : R-ape
 BuildRequires : R-assertthat
 BuildRequires : R-httr
@@ -40,10 +39,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552862160
+export SOURCE_DATE_EPOCH=1552863148
 
 %install
-export SOURCE_DATE_EPOCH=1552862160
+export SOURCE_DATE_EPOCH=1552863148
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
