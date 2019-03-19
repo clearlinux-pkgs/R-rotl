@@ -4,17 +4,29 @@
 #
 Name     : R-rotl
 Version  : 3.0.7
-Release  : 12
+Release  : 13
 URL      : https://cran.r-project.org/src/contrib/rotl_3.0.7.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rotl_3.0.7.tar.gz
 Summary  : Interface to the 'Open Tree of Life' API
 Group    : Development/Tools
 License  : BSD-2-Clause
+Requires: R-XML
+Requires: R-hms
+Requires: R-jsonlite
+Requires: R-pkgconfig
+Requires: R-prettyunits
+Requires: R-rlang
+BuildRequires : R-XML
 BuildRequires : R-ape
 BuildRequires : R-assertthat
+BuildRequires : R-hms
 BuildRequires : R-httr
+BuildRequires : R-jsonlite
+BuildRequires : R-pkgconfig
+BuildRequires : R-prettyunits
 BuildRequires : R-progress
 BuildRequires : R-rentrez
+BuildRequires : R-rlang
 BuildRequires : R-rncl
 BuildRequires : buildreq-R
 
@@ -39,10 +51,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552863148
+export SOURCE_DATE_EPOCH=1552956805
 
 %install
-export SOURCE_DATE_EPOCH=1552863148
+export SOURCE_DATE_EPOCH=1552956805
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
