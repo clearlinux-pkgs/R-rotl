@@ -4,36 +4,33 @@
 #
 Name     : R-rotl
 Version  : 3.0.9
-Release  : 18
+Release  : 19
 URL      : https://cran.r-project.org/src/contrib/rotl_3.0.9.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rotl_3.0.9.tar.gz
 Summary  : Interface to the 'Open Tree of Life' API
 Group    : Development/Tools
 License  : BSD-2-Clause
 Requires: R-ape
+Requires: R-assertthat
 Requires: R-httr
+Requires: R-jsonlite
 Requires: R-progress
 Requires: R-rentrez
 Requires: R-rncl
 BuildRequires : R-ape
+BuildRequires : R-assertthat
 BuildRequires : R-httr
+BuildRequires : R-jsonlite
 BuildRequires : R-progress
 BuildRequires : R-rentrez
 BuildRequires : R-rncl
 BuildRequires : buildreq-R
 
 %description
----
-output: github_document
----
-[![Build Status](https://travis-ci.org/ropensci/rotl.svg?branch=master)](https://travis-ci.org/ropensci/rotl)
-[![Build status](https://ci.appveyor.com/api/projects/status/qr4k9a8wlrjl65rp?svg=true)](https://ci.appveyor.com/project/ropensci/rotl)
-[![codecov.io](https://codecov.io/github/ropensci/rotl/coverage.svg?branch=master)](https://codecov.io/github/ropensci/rotl?branch=master)
-[![](http://www.r-pkg.org/badges/version/rotl)](http://www.r-pkg.org/pkg/rotl)
-[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/rotl)](http://www.r-pkg.org/pkg/rotl)
-[![Research software impact](http://depsy.org/api/package/cran/rotl/badge.svg)](http://depsy.org/package/r/rotl)
-[![](https://badges.ropensci.org/17_status.svg)](https://github.com/ropensci/onboarding/issues/17)
-[![Project Status: Active â The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+phylogenetic trees, information about studies used to assemble the synthetic
+    tree, and utilities to match taxonomic names to 'Open Tree identifiers'. The
+    'Open Tree of Life' aims at assembling a comprehensive phylogenetic tree for all
+    named species.
 
 %prep
 %setup -q -c -n rotl
@@ -42,13 +39,13 @@ output: github_document
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1560619512
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1569294221
 
 %install
-export SOURCE_DATE_EPOCH=1560619512
+export SOURCE_DATE_EPOCH=1569294221
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -77,7 +74,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
