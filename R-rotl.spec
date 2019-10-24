@@ -4,7 +4,7 @@
 #
 Name     : R-rotl
 Version  : 3.0.10
-Release  : 20
+Release  : 21
 URL      : https://cran.r-project.org/src/contrib/rotl_3.0.10.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rotl_3.0.10.tar.gz
 Summary  : Interface to the 'Open Tree of Life' API
@@ -23,12 +23,21 @@ BuildRequires : R-jsonlite
 BuildRequires : R-rentrez
 BuildRequires : R-rncl
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
-phylogenetic trees, information about studies used to assemble the
-    synthetic tree, and utilities to match taxonomic names to 'Open Tree
-    identifiers'. The 'Open Tree of Life' aims at assembling a
-    comprehensive phylogenetic tree for all named species.
+[![Build
+Status](https://travis-ci.org/ropensci/rotl.svg?branch=master)](https://travis-ci.org/ropensci/rotl)
+[![Build
+status](https://ci.appveyor.com/api/projects/status/qr4k9a8wlrjl65rp?svg=true)](https://ci.appveyor.com/project/ropensci/rotl)
+[![codecov.io](https://codecov.io/github/ropensci/rotl/coverage.svg?branch=master)](https://codecov.io/github/ropensci/rotl?branch=master)
+[![](http://www.r-pkg.org/badges/version/rotl)](http://www.r-pkg.org/pkg/rotl)
+[![CRAN RStudio mirror
+downloads](http://cranlogs.r-pkg.org/badges/rotl)](http://www.r-pkg.org/pkg/rotl)
+[![](https://badges.ropensci.org/17_status.svg)](https://github.com/ropensci/onboarding/issues/17)
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 %prep
 %setup -q -c -n rotl
@@ -38,10 +47,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569736671
+export SOURCE_DATE_EPOCH=1571896071
 
 %install
-export SOURCE_DATE_EPOCH=1569736671
+export SOURCE_DATE_EPOCH=1571896071
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
