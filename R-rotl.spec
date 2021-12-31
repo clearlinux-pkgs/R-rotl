@@ -4,7 +4,7 @@
 #
 Name     : R-rotl
 Version  : 3.0.12
-Release  : 40
+Release  : 41
 URL      : https://cran.r-project.org/src/contrib/rotl_3.0.12.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rotl_3.0.12.tar.gz
 Summary  : Interface to the 'Open Tree of Life' API
